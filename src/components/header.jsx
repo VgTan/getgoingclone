@@ -2,7 +2,7 @@ import React from "react";
 function Header() {
   return (
     <div className="absolute top-0 left-0 w-full font-poppins">
-      <div className="flex items-center max-w-[1280px] justify-between mx-auto">
+      <div className="flex items-center max-w-[1280px] justify-between mx-auto py-1 px-2">
         <div className="flex w-full items-center p-4">
           <div className="mr-1">
             <a className="" href="/">
@@ -12,7 +12,7 @@ function Header() {
               />
             </a>
           </div>
-          <div className="w-[40%] rounded-3xl shadow-search-box">
+          <div className="w-[37%] rounded-3xl shadow-search-box">
             <form className="w-full rounded-3xl bg-white overflow-hidden">
               <div className="flex items-center">
                 <input
@@ -20,7 +20,7 @@ function Header() {
                   type="text"
                   placeholder="Cari negara, kota, atau guide"
                 />
-                <div className="ml-auto bg-red-600 rounded-full flex items-center justify-center w-8 h-8 mr-[0.4rem]">
+                <div className="ml-auto bg-primary rounded-full flex items-center justify-center w-8 h-8 mr-[0.4rem]">
                   <svg
                     id="Layer_1"
                     data-name="Layer 1"

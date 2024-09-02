@@ -99,7 +99,7 @@ export default function Carousel() {
                 <div className="flex py-7 w-max hover:-translate-y-2 transition duration-300 cursor-pointer">
                   <div className="w-16 h-16 bg-[#f8f9fa] rounded-full flex justify-center items-center mr-6">
                     <img
-                      className="h-12 w-1h-12 object-contain"
+                      className="h-12 w-16 object-contain"
                       src="./images/content/Beach.png"
                       alt=""
                     />

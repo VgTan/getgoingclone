@@ -167,12 +167,14 @@ function homePage() {
               Cerita dari mereka yang telah menjelajahi Eropa bersama kami
             </p>
           </div>
-          <div className="w-full mt-20">
+          <div className="w-full">
             <CarouselMerdeka />
           </div>
         </section>
-        <section>
-          <Articles/>
+        <section className="bg-[#f8f9fa]">
+          <div className="max-w-[1320px] mx-auto">
+            <Articles />
+          </div>
         </section>
       </div>
     </div>

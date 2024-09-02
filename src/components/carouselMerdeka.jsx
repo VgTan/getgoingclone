@@ -59,7 +59,13 @@ export default function CarouselMerdeka() {
   };
   return (
     <>
-      <div className="flex">
+      <div className="flex py-20 relative">
+        <div className="absolute w-[160px] h-[160px] top-0 left-0 -translate-x-[40%] -translate-y-[8%]">
+          <img
+            src="https://getgoing.co.id/content/img/icon/quote.png"
+            class="img-fluid image-quote"
+          />
+        </div>
         <div className="max-w-[50%]">
           <Swiper
             ssMode={true}
@@ -74,7 +80,9 @@ export default function CarouselMerdeka() {
               <SwiperSlide key={key} className="w-full h-full pl-10">
                 <div className="text-start flex flex-col gap-3 font-poppins">
                   <h3 className="text-2xl font-bold">{title}</h3>
-                  <p className="text-[#8791a9] text-[0.8rem] tracking-wide leading-loose">{desc}</p>
+                  <p className="text-[#8791a9] text-[0.8rem] tracking-wide leading-loose">
+                    {desc}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}
@@ -88,14 +96,14 @@ export default function CarouselMerdeka() {
             centeredSlides={true}
             slidesPerView={2}
             coverflowEffect={{
-              rotate: 20,
+              rotate: 15,
               stretch: 50,
               depth: 100,
               modifier: 2,
               slideShadows: true,
             }}
             modules={[EffectCoverflow, Controller]}
-            className="mySwiper"
+            className="mySwiper h-[18rem] w-[40rem]"
             onSwiper={setSwiper2}
             controller={{ control: swiper1 }}
           >
@@ -108,7 +116,7 @@ export default function CarouselMerdeka() {
                   <div className="h-[11.3rem] w-full">
                     <img src={img} className="h-full w-full object-cover" />
                   </div>
-                  <div className="font-poppins">
+                  <div className="font-poppins text-center">
                     <h3 className="font-bold text-base">{name}</h3>
                     <p className="text-xs text-[#585858] tracking-widest">
                       {work}

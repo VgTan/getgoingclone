@@ -69,14 +69,18 @@ export default function carouselPopular() {
         className="mySwiper"
       >
         {Object.entries(popular).map(([key, { href, img, loc }], index) => (
-          <SwiperSlide key={key} className="h-full py-5 mb-5 flex flex-col justify-center items-center px-5">
-            <div className="h-[13rem] w-[13rem] rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300">
-              <a href={href}>
+          <SwiperSlide
+            key={key}
+            className="h-full py-5 mb-5 flex flex-col justify-center items-center px-5"
+          >
+            <div className=" h-[13rem] w-[13rem] rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300">
+              <a href={href} className="relative">
                 <img
                   src={img}
                   alt={key}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover z-0 "
                 />
+                <div className="absolute bottom-0 h-[55%] w-full bg-gradient-to-t from-[#000000ae]  z-1 pointer-events-none"></div>
               </a>
             </div>
             <div className="font-poppins py-2 w-full">

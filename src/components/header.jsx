@@ -1,7 +1,37 @@
-import React from "react";
+import { React, useEffect, useRef, useState } from "react";
+import "../App.css";
 function Header() {
+  const ref = useRef();
+  const [isFixed, setIsFixed] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const nav = document.querySelector(".nav");
+
+      const bottom =
+        ref.current.getBoundingClientRect().bottom + window.scrollY;
+
+      if (window.scrollY >= bottom) {
+        if (!isFixed) {
+          setIsFixed(true);
+        }
+      } else if (window.scrollY == 0) {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className="absolute top-0 left-0 w-full font-poppins">
+    <div
+      ref={ref}
+      className={`w-full font-poppins nav transition-transform duration-300 ease-in-out z-[100] ${
+        isFixed
+          ? "fixed top-0 transform translate-y-0"
+          : "absolute top-0 transform translate-y-0"
+      }`}
+    >
       <div className="flex items-center max-w-[1280px] justify-between mx-auto py-1 px-2">
         <div className="flex w-full items-center p-4">
           <div className="mr-1">
@@ -20,7 +50,7 @@ function Header() {
                   type="text"
                   placeholder="Cari negara, kota, atau guide"
                 />
-                <div className="ml-auto bg-primary rounded-full flex items-center justify-center w-8 h-8 mr-[0.4rem]">
+                <div className="ml-auto bg-alert rounded-full flex items-center justify-center w-8 h-8 mr-[0.4rem]">
                   <svg
                     id="Layer_1"
                     data-name="Layer 1"
@@ -32,7 +62,6 @@ function Header() {
                     <title>previous-arrow</title>
                     <path d="M58.94,24.28a14.27,14.27,0,0,1,20.35-20l39.49,40.16a14.28,14.28,0,0,1,0,20L80.09,103.79a14.27,14.27,0,1,1-20.35-20L74.82,68.41l-60.67-.29a14.27,14.27,0,0,1,.24-28.54l59.85.28L58.94,24.28Z" />
                   </svg>
-                  
                 </div>
               </div>
             </form>

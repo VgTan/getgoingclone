@@ -50,7 +50,7 @@ function Header() {
                   type="text"
                   placeholder="Cari negara, kota, atau guide"
                 />
-                <div className="ml-auto bg-alert rounded-full flex items-center justify-center w-8 h-8 mr-[0.4rem]">
+                <div className="ml-auto bg-danger rounded-full flex items-center justify-center w-8 h-8 mr-[0.4rem]">
                   <svg
                     id="Layer_1"
                     data-name="Layer 1"

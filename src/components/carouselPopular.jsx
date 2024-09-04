@@ -61,7 +61,20 @@ export default function carouselPopular() {
   return (
     <>
       <Swiper
-        slidesPerView={5}
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+          },
+          695: {
+            slidesPerView: 3,
+          },
+          890:{
+            slidesPerView: 4,
+          },
+          1125: {
+            slidesPerView: 5,
+          },
+        }}
         pagination={{
           dynamicBullets: true,
         }}
@@ -73,17 +86,17 @@ export default function carouselPopular() {
             key={key}
             className="h-full py-5 mb-5 flex flex-col justify-center items-center px-5"
           >
-            <div className=" h-[13rem] w-[13rem] rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300">
+            <div className=" md:h-[13rem] md:w-[13rem] w-[9rem] h-[9rem] rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300">
               <a href={href} className="relative">
                 <img
                   src={img}
                   alt={key}
                   className="w-full h-full object-cover z-0 "
                 />
-                <div className="absolute bottom-0 h-[55%] w-full bg-gradient-to-t from-[#000000ae]  z-1 pointer-events-none"></div>
+                <div className="absolute bottom-0 h-[60%] w-full bg-gradient-to-t from-[#000000ae]  z-1 pointer-events-none"></div>
               </a>
             </div>
-            <div className="font-poppins py-2 w-full">
+            <div className="font-poppins py-2 w-[9rem] truncate">
               <p className="font-bold text-base">{key}</p>
               <span className="text-base font-[300]">{loc}</span>
             </div>

@@ -81,7 +81,7 @@ function Articles() {
                     alt={article.title}
                   />
                 </a>
-                <div className="flex flex-col gap-5 p-4 h-[200px]">
+                <div className="flex flex-col gap-5 p-4 pb-12">
                   <a href={article.href} className="font-bold text-xl text-[#343a40] pt-3 hover:underline">
                     {article.title}
                   </a>

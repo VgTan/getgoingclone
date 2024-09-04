@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       colors: {
         'primary': '#4183d1',
-        'danger': '#c00'
+        'danger': '#c00',
+        'main' : '#343a40',
       },
       fontFamily: {
         'poppins' : ["Poppins", "sans-serif"]
@@ -17,7 +18,10 @@ module.exports = {
         'search-box': '0 0 2rem rgba(204,0,0,.7)',
         'popular': '1px -108px 36px -23px rgba(0,0,0,0.17) inset',
         'card': '0 0 .25rem rgba(0, 0, 0, .075) !important'
-      }
+      },
+      backgroundImage :{
+        'cardGradient': 'linear-gradient(to right, rgb(204, 0, 0) 0%, rgb(255, 51, 51) 40%, rgb(255, 158, 34) 80%);',
+      },
     },
   },
   plugins: [],

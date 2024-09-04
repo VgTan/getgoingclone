@@ -61,6 +61,20 @@ export default function carouselKotaPopular() {
   return (
     <>
       <Swiper
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+          },
+          695: {
+            slidesPerView: 3,
+          },
+          890: {
+            slidesPerView: 4,
+          },
+          1125: {
+            slidesPerView: 5,
+          },
+        }}
         slidesPerView={5}
         pagination={{
           dynamicBullets: true,
@@ -71,14 +85,14 @@ export default function carouselKotaPopular() {
         {Object.entries(kota).map(([key, { href, img, loc }], index) => (
           <SwiperSlide
             key={key}
-            className="h-full py-5 mb-5 flex flex-col justify-center items-center"
+            className="h-full lg:pb-8 pb-12 pt-8 mb-5 px-2 flex flex-col justify-center items-center"
           >
-            <a href={href}>
+            <a href={href} className="flex justify-center">
               <div
-                className={`relative h-[23rem] w-[15rem] rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 bg-cover bg-center`}
+                className={`relative h-max py-[12rem] lg:w-[15rem] w-full rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 bg-cover bg-center`}
                 style={{ backgroundImage: `url('${img}')` }}
-              > 
-                <div className="absolute flex flex-col justify-end gap-5 text-white font-poppins p-5 bg-gradient-to-t from-[#000000a6] w-full h-full">
+              >
+                <div className="absolute bottom-0 flex flex-col justify-end gap-5 text-white font-poppins p-5 bg-gradient-to-t from-[#000000a6] w-full h-[65%]">
                   <h3 className="text-3xl font-bold">{key}</h3>
                   <p>{loc}</p>
                 </div>

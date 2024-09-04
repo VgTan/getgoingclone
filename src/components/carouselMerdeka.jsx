@@ -59,14 +59,14 @@ export default function CarouselMerdeka() {
   };
   return (
     <>
-      <div className="flex py-20 relative">
+      <div className="grid lg:grid-cols-2 grid-cols-1 py-20 relative">
         <div className="absolute w-[160px] h-[160px] top-0 left-0 -translate-x-[40%] -translate-y-[8%]">
           <img
             src="https://getgoing.co.id/content/img/icon/quote.png"
             class="img-fluid image-quote"
           />
         </div>
-        <div className="max-w-[50%]">
+        <div className="">
           <Swiper
             ssMode={true}
             grabCursor={true}
@@ -77,10 +77,13 @@ export default function CarouselMerdeka() {
             controller={{ control: swiper2 }}
           >
             {Object.entries(merdeka).map(([key, { title, desc }], index) => (
-              <SwiperSlide key={key} className="w-full h-full pl-10">
+              <SwiperSlide
+                key={key}
+                className="w-full h-full lg:pl-10 px-4 lg:px-0"
+              >
                 <div className="text-start flex flex-col gap-3 font-poppins">
                   <h3 className="text-2xl font-bold">{title}</h3>
-                  <p className="text-[#8791a9] text-[0.8rem] tracking-wide leading-loose">
+                  <p className="text-[#8791a9] text-[0.9rem] tracking-wide leading-[2] lg:leading-loose">
                     {desc}
                   </p>
                 </div>
@@ -89,7 +92,7 @@ export default function CarouselMerdeka() {
           </Swiper>
         </div>
 
-        <div className="max-w-[50%] px-10">
+        <div className="md:px-10">
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
@@ -102,8 +105,22 @@ export default function CarouselMerdeka() {
               modifier: 2,
               slideShadows: true,
             }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1, // Example setting, adjust as needed
+              },
+              695: {
+                slidesPerView: 2,
+              },
+              890: {
+                slidesPerView: 3,
+              },
+              1125: {
+                slidesPerView: 4,
+              },
+            }}
             modules={[EffectCoverflow, Controller]}
-            className="mySwiper h-[18rem] w-[40rem]"
+            className="mySwiper h-[18rem]"
             onSwiper={setSwiper2}
             controller={{ control: swiper1 }}
           >

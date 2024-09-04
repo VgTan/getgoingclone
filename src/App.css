@@ -1,3 +1,60 @@
-.fixed-transition {
-  @apply transition-transform duration-300 ease-in-out;
+.nav-fixed {
+  animation: navbarFixed 0.2s ease-in forwards;
+  z-index: 100;
+  position: fixed;
+}
+
+.nav-fixed .nav-container {
+  animation: navbarChange 0.2s ease-in forwards ;
+}
+
+@keyframes navbarFixed {
+  from {
+    position: absolute;
+    transform: translateY(-100%);
+  }
+  to {
+    position: fixed;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navbarChange {
+  to {
+    background: #fafafa40;
+    backdrop-filter: blur(15px);
+    margin-top: 25px;
+    width: 95%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 45px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+
+  }
+}
+.nav-absolute {
+  position: absolute;
+  animation: navbarNormal .2s ease-in forwards ;
+}
+
+@keyframes navbarNormal {
+  from {
+    transform: translateY(30%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-active {
+  animation: spinning .5s ease-in-out forwards .5s;
+}
+
+@keyframes spinning {
+  to {
+    transform: rotateY(1turn);
+  }
 }

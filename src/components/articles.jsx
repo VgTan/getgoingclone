@@ -59,20 +59,20 @@ function Articles() {
 
   return (
     <div>
-      <div className="font-poppin">
+      <div className="bg-[#f8f9fa] font-poppin lg:px-0 px-4 ">
         <div className="flex flex-col pt-28">
-          <div className="flex justify-between pb-10">
-            <p className="text-[32px] text-[#21 2529] font-bold">Baca juga</p>
-            <button className="text-sm text-[#c00] tracking-[.3em] font-bold border border-[#c00] px-3 rounded-full ease-in-out duration-300 hover:bg-[#3c69ea] hover:border-[#3c69ea] hover:text-[#fff]">
+          <div className="md:flex flex-col md:flex-row md:justify-between pb-10">
+            <p className="text-[32px] text-[#21 2529] font-bold pb-2 md:pb-0">Baca juga</p>
+            <button className="text-sm text-[#c00] tracking-[.3em] font-bold border border-[#c00] p-2 md:px-3 rounded-full ease-in-out duration-300 hover:bg-[#3c69ea] hover:border-[#3c69ea] hover:text-[#fff]">
               LIHAT SEMUA ARTIKEL
             </button>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
             {/* ARTICLE */}
             {sortedRandomArticles.map((article, index) => (
               <div
                 key={index}
-                className="flex flex-col bg-[#fff] shadow-xl rounded-lg m-2 ease-in-out duration-300 hover:-translate-y-2"
+                className="flex flex-col bg-[#fff] shadow-xl rounded-lg ease-in-out duration-300 hover:-translate-y-2 pb-0"
               >
                 <a href={article.href} className="">
                   <img

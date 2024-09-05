@@ -70,7 +70,7 @@ export default function Carousel() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="llg:pt-[9rem] pt-[6rem] px-4">
+        <SwiperSlide className="lg:pt-[9rem] pt-[6rem] px-4">
           <div className="lg:max-w-[1320px] lg:flex flex flex-col lg:flex-row items-center justify-between mx-auto lg:p-0">
             <div className="lg:w-[47%] lg:max-w-[50%] lg:h-[42vh] w-full h-[28vh] rounded-2xl overflow-hidden relative">
               <img

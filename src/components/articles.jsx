@@ -62,9 +62,24 @@ function Articles() {
       <div className="bg-[#f8f9fa] font-poppin lg:px-0 px-4 ">
         <div className="flex flex-col pt-28">
           <div className="md:flex flex-col md:flex-row md:justify-between pb-10">
-            <p className="text-[32px] text-[#21 2529] font-bold pb-2 md:pb-0">Baca juga</p>
-            <button className="text-sm text-[#c00] tracking-[.3em] font-bold border border-[#c00] p-2 md:px-3 rounded-full ease-in-out duration-300 hover:bg-[#3c69ea] hover:border-[#3c69ea] hover:text-[#fff]">
+            <p className="text-[32px] text-[#21 2529] font-bold pb-2 md:pb-0">
+              Baca juga
+            </p>
+            <button className="flex items-center gap-2 text-sm text-[#c00] tracking-[.3em] font-bold border border-[#c00] p-2 md:px-3 rounded-full ease-in-out duration-300 hover:bg-[#3c69ea] hover:border-[#3c69ea] hover:text-[#fff]">
               LIHAT SEMUA ARTIKEL
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="0.78em"
+                height="0.8em"
+                viewBox="0 0 992 1280"
+              >
+                <g transform="translate(992 0) scale(-1 1)">
+                  <path
+                    fill="currentColor"
+                    d="M595 1120q0 13-10 23l-50 50q-10 10-23 10t-23-10L23 727q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23t-10 23L192 704l393 393q10 10 10 23m384 0q0 13-10 23l-50 50q-10 10-23 10t-23-10L407 727q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23t-10 23L576 704l393 393q10 10 10 23"
+                  />
+                </g>
+              </svg>
             </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
@@ -82,14 +97,28 @@ function Articles() {
                   />
                 </a>
                 <div className="flex flex-col gap-5 p-4 pb-12">
-                  <a href={article.href} className="font-bold text-xl text-[#343a40] pt-3 hover:underline">
+                  <a
+                    href={article.href}
+                    className="font-bold text-xl text-[#343a40] pt-3 hover:underline"
+                  >
                     {article.title}
                   </a>
                   <p className="font-medium text-sm text-[#adb5bd]">
                     {article.date}
                   </p>
-                  <a href={article.href} className="text-[#e63946] text-sm font-bold tracking-[.3em] cursor-pointer hover:text-[#c00] hover:underline hover:underline-[#e63946]">
+                  <a
+                    href={article.href}
+                    className="text-[#e63946] text-sm font-bold tracking-[.3em] cursor-pointer hover:text-[#c00] hover:underline hover:underline-[#e63946] flex items-center gap-2"
+                  >
                     LANJUTKAN MEMBACA
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      className="w-[0.7rem]"
+                      fill="#c00"
+                    >
+                      <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -97,7 +126,6 @@ function Articles() {
           </div>
         </div>
       </div>
-      \
     </div>
   );
 }

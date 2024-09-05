@@ -105,20 +105,6 @@ export default function CarouselMerdeka() {
               modifier: 2,
               slideShadows: true,
             }}
-            breakpoints={{
-              0: {
-                slidesPerView: 1, // Example setting, adjust as needed
-              },
-              695: {
-                slidesPerView: 2,
-              },
-              890: {
-                slidesPerView: 3,
-              },
-              1125: {
-                slidesPerView: 4,
-              },
-            }}
             modules={[EffectCoverflow, Controller]}
             className="mySwiper h-[18rem]"
             onSwiper={setSwiper2}

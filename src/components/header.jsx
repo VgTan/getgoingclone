@@ -3,14 +3,18 @@ import "../App.css";
 function Header() {
   const ref = useRef();
   const [isFixed, setIsFixed] = useState(false);
+  const [isClicked, setIsClicked] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
       const nav = document.querySelector(".nav");
 
-      if (window.scrollY > 100) {
-        setIsFixed(true);
+      if (window.scrollY > 110) {
+        nav.classList.add("nav-fixed");
+        nav.classList.remove("absolute");
+        nav.classList.remove("nav-absolute");
       } else {
-        setIsFixed(false);
+        nav.classList.remove("nav-fixed");
+        nav.classList.add("nav-absolute");
       }
     };
 
@@ -18,14 +22,28 @@ function Header() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const clickHandler = () => {
+      const mobileNav = document.querySelector(".nav-mobile");
+      setIsClicked(!isClicked);
+      if(isClicked) {
+        mobileNav.classList.add("mobile-nav");
+        mobileNav.classList.remove("mobile-nav-close");
+        mobileNav.classList.remove("hidden");
+      }
+      else if(!isClicked){
+        mobileNav.classList.remove("mobile-nav");
+        mobileNav.classList.add("mobile-nav-close");
+      }
+  };
   return (
     <div
       ref={ref}
-      className={`w-full font-poppins nav transition-transform duration-300 ease-in-out z-[100] px-[1rem] ${
-        isFixed ? "nav-fixed top-0 transform" : "nav-absolute top-0 transform"
-      }`}
+      className={`absolute w-full font-poppins nav transition-transform duration-300 ease-in-out z-[100] px-[1rem] py-3`}
     >
-      <div className="nav-container flex items-center max-w-[1280px] justify-between mx-auto px-1 py-3">
+      <div
+        className={`nav-container flex items-center max-w-[1280px] justify-between mx-auto px-1 py-3 flex-col h-full`}
+      >
         <div className={`flex w-full items-center md:gap-10 lg:gap-0`}>
           <div className="md:mr-1 md:w-max">
             <a className="" href="/">
@@ -95,13 +113,33 @@ function Header() {
               </li>
             </ul>
             <div className="lg:hidden block">
-              <div className="h-full">
+              <div className="h-full" onClick={(e) => clickHandler()}>
                 <div className="relative h-[0.2rem] w-5 rounded-xl bg-red-500 transition duration-700 z-[100]"></div>
                 <div className="relative mt-[0.15rem] h-[0.2rem] w-5 rounded-xl bg-red-500 transition duration-500 z-[100]"></div>
                 <div className="relative mt-[0.15rem] h-[0.2rem] w-5 rounded-xl bg-red-500 transition duration-500 z-[100]"></div>
               </div>
             </div>
           </div>
+        </div>
+        <div
+          className={`nav-mobile overflow-clip w-full hidden`}
+        >
+          <ul className="lg:hidden items-center text-sm text-end w-full active">
+            <li className="mt-10 text-red-500">
+              <a className="font-bold" href="">
+                Beranda
+              </a>
+            </li>
+            <li className="mt-5 text-red-500">
+              <a href="">Servis Kami</a>
+            </li>
+            <li className="mt-5 text-red-500">
+              <a href="">Blog</a>
+            </li>
+            <li className="font-bold m-5 ml-8 text-sm tracking-wider">
+              <a href="">L O G I N</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

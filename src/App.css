@@ -58,3 +58,29 @@
     transform: rotateY(1turn);
   }
 }
+
+.nav .mobile-nav {
+  animation: clickedAnim .5s ease forwards;
+}
+
+@keyframes clickedAnim {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 244px;
+  }
+}
+
+.mobile-nav-close {
+  animation: navClose 1s ease forwards;
+}
+
+@keyframes navClose {
+  from {
+    height: 244px;
+  }
+  to {
+    height: 0px;
+  }
+}

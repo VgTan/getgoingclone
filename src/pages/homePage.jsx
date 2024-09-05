@@ -5,6 +5,7 @@ import CarouselKotaPopular from "../components/carouselKotaPopular";
 import CarouselMerdeka from "../components/carouselMerdeka";
 import Articles from "../components/articles";
 import Footer from "../components/footer";
+import Alert from "../components/alert";
 
 function homePage() {
   return (
@@ -19,12 +20,12 @@ function homePage() {
       <section className="py-1 mb-5 lg:px-0 px-4 flex justify-center">
         <div className="lg:max-w-[1320px]">
           <div className="mt-3 text-center font-bold">
-            <h2 class="mb-2 text-[2rem] leading-[1.3] lg:px-0 px-5">
-              “Better to <span class="text-danger">SEE</span> something once
+            <h2 className="mb-2 text-[2rem] leading-[1.3] lg:px-0 px-5">
+              “Better to <span className="text-danger">SEE</span> something once
               than hear about it{" "}
-              <span class="text-primary">A THOUSAND TIMES</span>”
+              <span className="text-primary">A THOUSAND TIMES</span>”
             </h2>
-            <h4 class="mb-1 text-2xl">- Asian Proverb.</h4>
+            <h4 className="mb-1 text-2xl">- Asian Proverb.</h4>
           </div>
         </div>
       </section>
@@ -173,12 +174,13 @@ function homePage() {
           <CarouselMerdeka />
         </div>
       </section>
-      <section className="bg-[#f8f9fa]">
+      <section className="bg-[#f8f9fa] pb-28">
         <div className="max-w-[1320px] mx-auto">
           <Articles />
         </div>
       </section>
       <Footer />
+      <Alert />
     </div>
   );
 }
